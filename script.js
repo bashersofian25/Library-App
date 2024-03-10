@@ -72,9 +72,23 @@ function createCardButtons(book){
     buttonContainer.classList.add('button-container');
     const isReadButton = document.createElement('button');
     
-    isReadButton.setAttribute('class', `read ${book.id}`);
     isReadButton.addEventListener('click', (e) => {
+        console.log(e.target.classList[0]);
         e.target.classList.toggle('done');
+        const cardId = isReadButton.parentNode.parentNode.id;
+        myBooks = myBooks.map(book => {
+            if(book.id == cardId){
+                book.isRead = !(book.isRead);
+            }
+            return book;
+        });
+        console.log(myBooks);
+        if(e.target.classList[0] == 'done'){
+            isReadButton.innerText = "Read";
+        }else {
+            isReadButton.innerText = "NOT Read";
+        }
+
     });
     if(book.isRead){
         isReadButton.classList.add('done');
@@ -93,7 +107,7 @@ function createCardButtons(book){
 
         
     });
-    removeButton.setAttribute('class', `remove ${book.id}`);
+    removeButton.setAttribute('class', `remove`);
     removeButton.append("Remove");
 
     buttonContainer.append(isReadButton);
