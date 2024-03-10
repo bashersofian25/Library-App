@@ -4,14 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Library</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <dialog class="dialog">
+        <form>
+            <ul class="dialog-list">
+                <li class="text-field">
+                    <label for="title">Book Title</label>
+                    <input type="text" id="title" name="bookTitle">
+                </li>
+                <li class="text-field">
+                    <label for="author">Book Author</label>
+                    <input type="text" id="author" name="bookAuthor">
+
+                </li>
+                <li class="text-field">
+                    <label for="pages">Number of Pages</label>
+                    <input type="number" id="pages" name="bookPages">
+                </li>
+
+                <li>
+                    <label for="Id">Book ID</label>
+                    <input type="number" id="Id" name="Id">
+                </li>
+                
+                <li>
+                    <label for="is-read">Did you finish it?</label>
+                    <input type="checkbox" id="is-read" name="isRead">
+                </li>
+            </ul>
+            <button type="submit" id="confirm">Confirm</button>
+            <button id="cancel">Cancel</button>
+        </form>
+    </dialog>
     <div class="header">
         My Great Books
     </div>
-    <div class="closet">
+    <div class="shelf">
         <button class="add"> + </button>
         <div class="books"></div>
     </div>
