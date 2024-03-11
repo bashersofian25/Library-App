@@ -1,3 +1,5 @@
+// notes for me, I read it after two hours of coding it, the code is not very clear.
+
 let myBooks = [];
 const dialog = document.querySelector(".dialog");
 const addButton = document.querySelector(".add");
@@ -28,6 +30,7 @@ function isIDUnique(ID){
     }
     return true;
 }
+
 confirmButton.addEventListener('click', (e) => {
     e.preventDefault();
     const title = form.title.value;
@@ -67,6 +70,7 @@ function createCardDetails(book){
     return details;
 }
 
+// maybe this function is very large?
 function createCardButtons(book){
     const buttonContainer =  document.createElement('div');
     buttonContainer.classList.add('button-container');
