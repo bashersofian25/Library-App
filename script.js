@@ -148,12 +148,17 @@ function appendCards(){
     });
 }
 
-function Book(title, author, totalPages, isRead, id){
-    this.title = title;
-    this.author = author;
-    this.totalPages = totalPages;
-    this.isRead = isRead;
-    this.id = id;
+
+
+class Book {
+    constructor(title, author, totalPages, isRead, id){
+        this.author = author;
+        this.totalPages = totalPages;
+        this.isRead = isRead;
+        this.id = id;
+        this.title = title;
+
+    }
 }
 
 function addBookToLibrary(title, author, totalPages, isRead, id){
