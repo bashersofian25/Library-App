@@ -13,12 +13,12 @@
             <ul class="dialog-list">
                 <li class="text-field">
                     <label for="title">Book Title</label>
-                    <input type="text" id="title" name="bookTitle" required>
+                    <input type="text" id="title" name="bookTitle" minlength="4" maxlength="30" required>
                     <span class="title error" aria-live="polite"></span>
                 </li>
                 <li class="text-field">
                     <label for="author">Book Author</label>
-                    <input type="text" id="author" name="bookAuthor" required>
+                    <input type="text" id="author" name="bookAuthor" required minlength="4" maxlength="30">
                     <span class="author error" aria-live="polite"></span>
                 </li>
                 <li class="text-field">
