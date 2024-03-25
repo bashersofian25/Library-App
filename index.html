@@ -9,25 +9,29 @@
 </head>
 <body>
     <dialog class="dialog">
-        <form>
+        <form novalidate>
             <ul class="dialog-list">
                 <li class="text-field">
                     <label for="title">Book Title</label>
-                    <input type="text" id="title" name="bookTitle">
+                    <input type="text" id="title" name="bookTitle" required>
+                    <span class="title error" aria-live="polite"></span>
                 </li>
                 <li class="text-field">
                     <label for="author">Book Author</label>
-                    <input type="text" id="author" name="bookAuthor">
-
+                    <input type="text" id="author" name="bookAuthor" required>
+                    <span class="author error" aria-live="polite"></span>
                 </li>
                 <li class="text-field">
                     <label for="pages">Number of Pages</label>
-                    <input type="number" id="pages" name="bookPages">
+                    <input type="number" id="pages" name="bookPages" required>
+                    <span class="pages error" aria-live="polite"></span>
                 </li>
 
                 <li class="text-field">
                     <label for="Id">Book ID</label>
-                    <input type="number" id="Id" name="Id">
+                    <input type="number" id="Id" name="Id" required>
+                    <span class="id error" aria-live="polite"></span>
+
                 </li>
 
                 <li>

@@ -38,19 +38,57 @@ confirmButton.addEventListener('click', (e) => {
     const totalPages = form.pages.value;
     const isRead = form.isRead.checked;
     const ID = form.id.value;
-    console.log(ID);
     const uniqueID = isIDUnique(ID);
-    console.log(uniqueID)
-    if(title && author && totalPages && uniqueID){
+    if(validation()){
         addBookToLibrary(title, author, totalPages, isRead, ID);
         appendCards();
-    }else {
-        alert("Invalid Book Data");
     }
-    
-
 });
 
+
+function validation(){
+
+    let valid = true;
+    const title = document.querySelector('#title');
+    const author = document.querySelector("#author");
+    const pages = document.querySelector('#pages');
+    const id = document.querySelector('#Id');
+
+    const errorTitle = document.querySelector('.title');
+    const errorAuthor = document.querySelector(".author");
+    const errorPages = document.querySelector('.pages');
+    const errorId = document.querySelector('.id');
+
+    if(title.validity.valueMissing){
+        errorTitle.textContent = '*required';
+        valid = false;
+    }else {
+        errorTitle.textContent = '';
+    }
+
+    if(author.validity.valueMissing){
+        errorAuthor.textContent = '*required';
+        valid = false;
+    }else {
+        errorAuthor.textContent = '';
+    }
+
+    if(pages.validity.valueMissing){
+        errorPages.textContent = '*required';
+        valid = false;
+    }else {
+        errorPages.textContent = '';
+    }
+
+    if(id.validity.valueMissing){
+        errorId.textContent = '*required';
+        valid = false;
+    }else {
+        errorId.textContent = '';
+    }
+
+    return valid;
+}
 function createCardDetails(book){
     const details = document.createElement('ul');
     const title = document.createElement('li');
